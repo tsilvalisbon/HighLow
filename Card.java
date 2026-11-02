@@ -1,4 +1,4 @@
-package projeto;
+package highLow;
 
 public class Card {
 
@@ -23,4 +23,3 @@ public class Card {
         return "Valor da carta: " + value + " Naipe: " + suit;
     }
 }
-//aa

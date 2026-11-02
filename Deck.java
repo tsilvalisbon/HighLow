@@ -1,4 +1,4 @@
-package projeto;
+package highLow;
 
 import java.util.ArrayList;
 
