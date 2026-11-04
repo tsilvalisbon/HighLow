@@ -24,26 +24,29 @@ public class HighLow {
 
         // Cada ronda precisa de pelo menos duas cartas para o jogo continuar
         while (continuePlaying && deck.getCardsLeft() >= 2) {
-            roundsPlayed++; // Aumenta o numéro de rondas sempre que começa uma nova
+            roundsPlayed++; // Aumenta o numero de rondas sempre que começa uma nova
             int pointsRound = 0;
             boolean roundActive = true;
             Card currentCard = deck.dealCard();
 
             System.out.println("\nRONDA " + roundsPlayed);
 
-            // Continuar enquanto o jogador acertar e existirem cartas
+            // Continuar a ronda enquanto o jogador acertar e existirem cartas
             while (roundActive && deck.getCardsLeft() > 0) {
                 System.out.println(currentCard);
                 System.out.print("Próxima carta é mais alta (A) ou mais baixa (B)? ");
+                // Proteção contra null e EOF
                 if (!scanner.hasNextLine()) {
                     System.out.println("Input inválido.");
                     break;
                 }
+                // Scanner para ler o input do jogador usando trim para remover espaços e toUpperCase para converter o input para maiusculas
                 String choice = scanner.nextLine().trim().toUpperCase();
 
-                // Validar a escolha.
+                // Validar a escolha usando o método equals para comparar strings
                 while (!choice.equals("A") && !choice.equals("B")) {
                     System.out.print("Escolha inválida. Escreve A ou B: ");
+                    // Proteção contra null e EOF
                     if (!scanner.hasNextLine()) {
                         System.out.println("Input inválido.");
                         break;
@@ -87,9 +90,10 @@ public class HighLow {
             if (deck.getCardsLeft() < 2) {
                 System.out.println("Não existem cartas suficientes para iniciar outra ronda.");
                 continuePlaying = false;
-            } else {
-                // Perguntar ao jogador se quer jogar novamente
+            } 
+            else {
                 System.out.print("Queres jogar novamente? (S/N): ");
+                // Proteção contra null e EOF
                 if (!scanner.hasNextLine()) {
                     System.out.println("Input inválido.");
                     break;
@@ -99,6 +103,11 @@ public class HighLow {
                 // Validar a resposta.
                 while (!answer.equals("S") && !answer.equals("N")) {
                     System.out.print("Resposta inválida. Escreve S ou N: ");
+                    // Proteção contra null e EOF
+                    if (!scanner.hasNextLine()) {
+                        System.out.println("Input inválido.");
+                        break;
+                    }
                     answer = scanner.nextLine().trim().toUpperCase();
                 }
                 // Se a resposta for S o jogo continua, caso contrário, termina.
@@ -109,15 +118,15 @@ public class HighLow {
         float averagePoints = 0;
 
         // Calcula a média
-        if (roundsPlayed > 0)
-            averagePoints = (float) totalPoints / roundsPlayed;
+        averagePoints = (float) totalPoints / roundsPlayed;
         
-        // Apresenta os resultados final do jogo
+        // Apresenta os resultados finais do jogo
         System.out.println("\nRESULTADO FINAL");
         System.out.println("Rondas jogadas: " + roundsPlayed);
         System.out.println("Pontuação total: " + totalPoints);
         System.out.printf("Pontuação média por ronda: %.2f%n", averagePoints);
 
+        // Fecha o scanner para evitar memory leaks
         scanner.close();
     }
 }
