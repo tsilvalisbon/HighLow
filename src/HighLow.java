@@ -100,7 +100,7 @@ public class HighLow {
                 }
                 String answer = scanner.nextLine().trim().toUpperCase();
 
-                // Validar a resposta.
+                // Validar a resposta
                 while (!answer.equals("S") && !answer.equals("N")) {
                     System.out.print("Resposta inválida. Escreve S ou N: ");
                     // Proteção contra null e EOF
@@ -110,7 +110,7 @@ public class HighLow {
                     }
                     answer = scanner.nextLine().trim().toUpperCase();
                 }
-                // Se a resposta for S o jogo continua, caso contrário, termina.
+                // Se a resposta for S o jogo continua, caso contrário, termina
                 continuePlaying = answer.equals("S");
             }
         }
