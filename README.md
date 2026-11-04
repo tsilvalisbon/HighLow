@@ -195,3 +195,7 @@ java highLow.src.HighLow
 
 ## Modelo de Dominio
 <img width="826" height="534" alt="Modelo de Dominio" src="https://github.com/user-attachments/assets/f3448312-6e3d-4391-a442-0e97949e47b7" />
+
+## Inteligência Artificial
+
+Utilizamos IA para consultar sintaxe sobre o `trim(), nextline(), hasnextline(), equals()` e para formatar o README.md.
