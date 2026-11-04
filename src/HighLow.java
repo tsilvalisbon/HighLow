@@ -24,7 +24,7 @@ public class HighLow {
 
         // Cada ronda precisa de pelo menos duas cartas para o jogo continuar
         while (continuePlaying && deck.cardsLeft() >= 2) {
-            roundsPlayed++; // Aumenta o numero de rondas sempre que começa uma nova
+            roundsPlayed++; // Aumenta o número de rondas sempre que começa uma nova
             int pointsRound = 0;
             boolean roundActive = true;
             Card currentCard = deck.dealCard();
@@ -40,7 +40,7 @@ public class HighLow {
                     System.out.println("Input inválido.");
                     break;
                 }
-                // Scanner para ler o input do jogador usando trim para remover espaços e toUpperCase para converter o input para maiusculas
+                // Scanner para ler o input do jogador usando trim para remover espaços e toUpperCase para converter o input para maiúsculas
                 String choice = scanner.nextLine().trim().toUpperCase();
 
                 // Validar a escolha usando o método equals para comparar strings
@@ -72,7 +72,7 @@ public class HighLow {
                 {
                     pointsRound++;
                     System.out.println("Acertaste! Pontuação da ronda: " + pointsRound);
-                    // A próxima carta passa a ser a carta atual.
+                    // A próxima carta passa a ser a carta atual
                     currentCard = nextCard;
                 } else {
                     // Se a escolha estiver errada, a ronda termina
@@ -86,7 +86,7 @@ public class HighLow {
             System.out.println("\nPontuação da ronda " + roundsPlayed + ": " + pointsRound);
             System.out.println("Cartas restantes: " + deck.cardsLeft());
 
-            // Só é possível jogar outra ronda com pelo menos duas cartas.
+            // Só é possível jogar outra ronda com pelo menos duas cartas
             if (deck.cardsLeft() < 2) {
                 System.out.println("Não existem cartas suficientes para iniciar outra ronda.");
                 continuePlaying = false;
