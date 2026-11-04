@@ -12,7 +12,7 @@ public class Deck {
     }
 
     private void createDeck() {
-        String[] suits = {"Spades", "Hearts", "Clubs", "Diamonds"};
+        String[] suits = {"Espadas", "Copas", "Paus", "Ouros"};
 
         int suitIndex = 0;
         int cardIndex = 0;
@@ -30,7 +30,7 @@ public class Deck {
             suitIndex++;
         }
     }
-    
+
     public void shuffle() {
         int cardIndex = cards.length - 1;
 
@@ -52,7 +52,7 @@ public class Deck {
         return cards[cardsLeft];
     }
 
-    public int cardsLeft(){
+    public int getCardsLeft(){
         return cardsLeft;
     }
 }
