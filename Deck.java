@@ -11,12 +11,37 @@ public class Deck {
         shuffle();
     }
 
-    public void createDeck(){
+    private void createDeck() {
+        String[] suits = {"Spades", "Hearts", "Clubs", "Diamonds"};
 
+        int suitIndex = 0;
+        int cardIndex = 0;
+
+        while (suitIndex < suits.length) {
+            String suit = suits[suitIndex];
+            int value = 1;
+
+            while (value <= 13) {
+                cards[cardIndex] = new Card(value, suit);
+
+                cardIndex++;
+                value++;
+            }
+            suitIndex++;
+        }
     }
+    public void shuffle() {
+        int cardIndex = cards.length - 1;
 
-    public void shuffle(){
+        while (cardIndex > 0) {
+            int randomIndex = (int) (Math.random() * (cardIndex + 1));
 
+            Card temp = cards[cardIndex];
+            cards[cardIndex] = cards[randomIndex];
+            cards[randomIndex] = temp;
+            cardIndex--;
+        }
+        cardsLeft = cards.length;
     }
 
     public void dealCard(){
@@ -24,6 +49,5 @@ public class Deck {
     }
 
     public int cardsLeft(){
-        return cards.length;
     }
 }
