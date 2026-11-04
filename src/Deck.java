@@ -2,7 +2,7 @@
 // Martim Pires a22610371
 // Tomás Silva a22608276
 
-package highLow;
+package highLow.src;
 
 public class Deck {
     
@@ -42,14 +42,14 @@ public class Deck {
         int cardIndex = cards.length - 1;
 
         while (cardIndex > 0) {
-            // Gera um índice aleatório entre 0 e cardIndex usando Math.random() para gerar um numero aleatorio multiplicado pelo tamanho do baralho e converte para int
+            // Gera um index aleatório entre 0 e cardIndex usando Math.random() para gerar um numero aleatorio multiplicado pelo tamanho do baralho e converte para int
             int randomIndex = (int) (Math.random() * (cardIndex + 1));
             // Troca a carta atual com a carta aleatória
             Card temp = cards[cardIndex];
             // Troca as cartas usando uma variável temporária
             cards[cardIndex] = cards[randomIndex];
             cards[randomIndex] = temp;
-            // Decrementa o índice da carta atual
+            // Decrementa o index da carta atual
             cardIndex--;
         }
         cardsLeft = cards.length;
@@ -64,7 +64,7 @@ public class Deck {
         return cards[cardsLeft];
     }
     // Retorna o número de cartas restantes no baralho
-    public int getCardsLeft(){
+    public int cardsLeft(){
         return cardsLeft;
     }
 }

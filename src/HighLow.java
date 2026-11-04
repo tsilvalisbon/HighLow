@@ -2,7 +2,7 @@
 // Martim Pires a22610371
 // Tomás Silva a22608276
 
-package highLow;
+package highLow.src;
 
 import java.util.Scanner;
 
@@ -23,7 +23,7 @@ public class HighLow {
         System.out.println("Ganhas um ponto por cada opção correta, mas se errares ou as cartas forem do mesmo valor, a ronda termina."); 
 
         // Cada ronda precisa de pelo menos duas cartas para o jogo continuar
-        while (continuePlaying && deck.getCardsLeft() >= 2) {
+        while (continuePlaying && deck.cardsLeft() >= 2) {
             roundsPlayed++; // Aumenta o numero de rondas sempre que começa uma nova
             int pointsRound = 0;
             boolean roundActive = true;
@@ -32,7 +32,7 @@ public class HighLow {
             System.out.println("\nRONDA " + roundsPlayed);
 
             // Continuar a ronda enquanto o jogador acertar e existirem cartas
-            while (roundActive && deck.getCardsLeft() > 0) {
+            while (roundActive && deck.cardsLeft() > 0) {
                 System.out.println(currentCard);
                 System.out.print("Próxima carta é mais alta (A) ou mais baixa (B)? ");
                 // Proteção contra null e EOF
@@ -84,10 +84,10 @@ public class HighLow {
             totalPoints += pointsRound;
             // Apresenta os resultados da ronda e o número de cartas restantes
             System.out.println("\nPontuação da ronda " + roundsPlayed + ": " + pointsRound);
-            System.out.println("Cartas restantes: " + deck.getCardsLeft());
+            System.out.println("Cartas restantes: " + deck.cardsLeft());
 
             // Só é possível jogar outra ronda com pelo menos duas cartas.
-            if (deck.getCardsLeft() < 2) {
+            if (deck.cardsLeft() < 2) {
                 System.out.println("Não existem cartas suficientes para iniciar outra ronda.");
                 continuePlaying = false;
             } 

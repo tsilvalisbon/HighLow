@@ -2,7 +2,7 @@
 // Martim Pires a22610371
 // Tomás Silva a22608276
 
-package highLow;
+package highLow.src;
 
 public class Card {
 
