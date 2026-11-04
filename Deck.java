@@ -27,7 +27,6 @@ public class Deck {
 
             while (value <= 13) {
                 cards[cardIndex] = new Card(value, suit);
-
                 cardIndex++;
                 value++;
             }
