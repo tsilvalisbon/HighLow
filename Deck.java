@@ -30,6 +30,7 @@ public class Deck {
             suitIndex++;
         }
     }
+    
     public void shuffle() {
         int cardIndex = cards.length - 1;
 
@@ -44,10 +45,14 @@ public class Deck {
         cardsLeft = cards.length;
     }
 
-    public void dealCard(){
-
+    public Card dealCard() {
+        if (cardsLeft == 0)
+            return null;
+        cardsLeft--;
+        return cards[cardsLeft];
     }
 
     public int cardsLeft(){
+        return cardsLeft;
     }
 }
