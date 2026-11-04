@@ -24,7 +24,7 @@ public class HighLow {
 
         // Cada ronda precisa de pelo menos duas cartas para o jogo continuar
         while (continuePlaying && deck.getCardsLeft() >= 2) {
-            roundsPlayed++; // Aumenta o numero de rondas sempre que começa uma nova
+            roundsPlayed++; // Aumenta o número de rondas sempre que começa uma nova
             int pointsRound = 0;
             boolean roundActive = true;
             Card currentCard = deck.dealCard();
@@ -86,7 +86,7 @@ public class HighLow {
             System.out.println("\nPontuação da ronda " + roundsPlayed + ": " + pointsRound);
             System.out.println("Cartas restantes: " + deck.getCardsLeft());
 
-            // Só é possível jogar outra ronda com pelo menos duas cartas.
+            // Só é possível jogar outra ronda com pelo menos duas cartas
             if (deck.getCardsLeft() < 2) {
                 System.out.println("Não existem cartas suficientes para iniciar outra ronda.");
                 continuePlaying = false;
@@ -100,7 +100,7 @@ public class HighLow {
                 }
                 String answer = scanner.nextLine().trim().toUpperCase();
 
-                // Validar a resposta.
+                // Validar a resposta
                 while (!answer.equals("S") && !answer.equals("N")) {
                     System.out.print("Resposta inválida. Escreve S ou N: ");
                     // Proteção contra null e EOF
@@ -110,7 +110,7 @@ public class HighLow {
                     }
                     answer = scanner.nextLine().trim().toUpperCase();
                 }
-                // Se a resposta for S o jogo continua, caso contrário, termina.
+                // Se a resposta for S o jogo continua, caso contrário, termina
                 continuePlaying = answer.equals("S");
             }
         }
