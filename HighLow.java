@@ -35,11 +35,19 @@ public class HighLow {
             while (roundActive && deck.getCardsLeft() > 0) {
                 System.out.println(currentCard);
                 System.out.print("Próxima carta é mais alta (A) ou mais baixa (B)? ");
+                if (!scanner.hasNextLine()) {
+                    System.out.println("Input inválido.");
+                    break;
+                }
                 String choice = scanner.nextLine().trim().toUpperCase();
 
                 // Validar a escolha.
                 while (!choice.equals("A") && !choice.equals("B")) {
                     System.out.print("Escolha inválida. Escreve A ou B: ");
+                    if (!scanner.hasNextLine()) {
+                        System.out.println("Input inválido.");
+                        break;
+                    }
                     choice = scanner.nextLine().trim().toUpperCase();
                 }
 
@@ -82,6 +90,10 @@ public class HighLow {
             } else {
                 // Perguntar ao jogador se quer jogar novamente
                 System.out.print("Queres jogar novamente? (S/N): ");
+                if (!scanner.hasNextLine()) {
+                    System.out.println("Input inválido.");
+                    break;
+                }
                 String answer = scanner.nextLine().trim().toUpperCase();
 
                 // Validar a resposta.
