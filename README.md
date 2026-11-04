@@ -188,9 +188,10 @@ A partir da pasta `highLow`, compilar com:
 ```bash
 javac src/*.java
 ```
-
 Executar com:
-
 ```bash
 java highLow.src.HighLow
 ```
+
+## Modelo de Dominio
+<img width="826" height="534" alt="Modelo de Dominio" src="https://github.com/user-attachments/assets/f3448312-6e3d-4391-a442-0e97949e47b7" />
